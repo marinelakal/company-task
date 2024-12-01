@@ -1,0 +1,64 @@
+<div
+  class="menu-container"
+  role="main"
+  [attr.aria-label]="'This is a Pizza Menu. Select your desired pizza and customize sizes and prices.'"
+>
+  <h1 [attr.aria-label]="'This is the Pizza Menu Title'">Pizza Menu</h1>
+  <div *ngFor="let pizza of pizzaMenuData; let i = index" class="accordion">
+    <!-- Accordion Header -->
+    <div
+      class="accordion-header"
+      (click)="toggleAccordion(i)"
+      (keydown)="handleKeydown($event, i)"
+      role="button"
+      [attr.aria-expanded]="activeAccordion === i"
+      [attr.aria-controls]="'accordion-body-' + i"
+      tabindex="0"
+      [attr.aria-label]="'Expand or collapse options for ' + pizza.name"
+    >
+      <h2 id="accordion-header-{{ i }}">{{ pizza.name }}</h2>
+      <span class="material-icons" aria-hidden="true">
+        {{ activeAccordion === i ? 'expand_less' : 'expand_more' }}
+      </span>
+    </div>
+    <!-- Accordion Body -->
+    <div
+      class="accordion-body"
+      *ngIf="activeAccordion === i"
+      id="accordion-body-{{ i }}"
+      [attr.aria-labelledby]="'accordion-header-' + i"
+      role="region"
+      [attr.aria-label]="'Customization options for ' + pizza.name"
+    >
+      <div *ngFor="let size of pizza.sizes" class="size-container">
+        <label>
+          <input
+            type="checkbox"
+            [(ngModel)]="size.checked"
+            (change)="onCheckboxChange(size)"
+            [attr.aria-label]="'Select size ' + size.name + ' for ' + pizza.name"
+          />
+          {{ size.name }}
+        </label>
+        <div class="price-container">
+          <span class="currency" aria-hidden="true">$</span>
+          <input
+            type="number"
+            [(ngModel)]="size.price"
+            [disabled]="!size.checked"
+            (keydown.enter)="onPriceEdit(size, $event)"
+            [attr.aria-label]="'Enter price for size ' + size.name + ' of ' + pizza.name"
+          />
+        </div>
+      </div>
+      <div class="undo-button" *ngIf="hasChanges(pizza)">
+        <button
+          (click)="undoChanges(pizza)"
+          [attr.aria-label]="'Undo changes made to ' + pizza.name"
+        >
+          &#8634;
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

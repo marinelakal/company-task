@@ -1,0 +1,23 @@
+<div>
+  <div *ngFor="let size of pizza.sizes">
+    <!-- Checkbox for selecting size -->
+    <label>
+      <input
+        type="checkbox"
+        [(ngModel)]="size.checked"
+        (change)="onCheckboxChange(size)"
+        [attr.aria-label]="'Select ' + size.name"
+      />
+      {{ size.name }}
+    </label>
+    <!-- Input for editing price -->
+    <input
+      type="number"
+      [(ngModel)]="size.price"
+      [disabled]="!size.checked"
+      [attr.aria-label]="'Price for ' + size.name"
+    />
+  </div>
+  <!-- Undo button for resetting changes -->
+  <button (click)="undoChanges()" aria-label="Undo changes for this pizza">Undo</button>
+</div>
