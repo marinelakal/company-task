@@ -49,8 +49,8 @@ The application is optimized for users with low vision or those using screen rea
 #### Key Features:
 - Use of `aria-label` to describe the functionality of each button and input. Tested with screen reader (ChromeVox)
 - Keyboard navigation:
-- Tab to switch between options.
-- Enter/Space to expand/collapse the accordion.
+ Tab to switch between options.
+ Enter/Space to expand/collapse the accordion.
 Result of automated tool Lighthouse :
 ![image](https://github.com/user-attachments/assets/c0037002-c696-4fe0-999b-06cd9daf97b3)
 
@@ -59,7 +59,7 @@ Result of automated tool Lighthouse :
 If the user clicks the icon "Undo" the initial state is restored.
 
 ## Technologies
-- Angular for component creation and state management.
+- Angular for component creation and state management. v19.0.2
 - CSS for design and styling.
 - Local Storage for persisting user changes.
 
