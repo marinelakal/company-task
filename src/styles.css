@@ -1,24 +1,59 @@
+/* Global Styling */
 html {
-    font-family: 'Montserrat', sans-serif;
-    background-image: url('/pizza.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('/pizza.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 0;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 app-root {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
   height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
-  
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  html {
+    background-size: contain;
+    background-position: center;
+  }
+
+  app-root {
+    padding: 15px;
+    max-width: 90%;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    background-size: cover;
+    background-position: center;
+  }
+
+  app-root {
+    padding: 10px;
+    max-width: 95%;
+    margin-top: 20px;
+  }
+}

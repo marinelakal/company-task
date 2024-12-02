@@ -134,27 +134,11 @@ h1 {
   .menu-container {
     max-width: 90%;
     padding: 15px;
+    margin: 60px auto;
   }
 
   h1 {
     font-size: 36px;
-  }
-
-  .accordion-header {
-    padding: 12px 15px;
-  }
-
-  .accordion {
-    margin: 15px auto;
-  }
-
-  .size-container input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-  }
-
-  .size-container input[type="number"] {
-    width: 70px;
   }
 }
 
@@ -162,6 +146,7 @@ h1 {
   .menu-container {
     max-width: 95%;
     padding: 10px;
+    margin: 80px auto;
   }
 
   h1 {
@@ -176,15 +161,5 @@ h1 {
 
   .accordion-body {
     padding: 10px;
-  }
-
-  .size-container input[type="checkbox"] {
-    width: 14px;
-    height: 14px;
-  }
-
-  .size-container input[type="number"] {
-    width: 60px;
-    font-size: 12px;
   }
 }
