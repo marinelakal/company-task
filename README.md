@@ -52,6 +52,7 @@ The application is optimized for users with low vision or those using screen rea
  Tab to switch between options.
  Enter/Space to expand/collapse the accordion.
 Result of automated tool Lighthouse :
+
 ![image](https://github.com/user-attachments/assets/c0037002-c696-4fe0-999b-06cd9daf97b3)
 
 
